@@ -25,5 +25,15 @@ pipeline {
         }
       }
     }
+    stage('Approvals') {
+      steps {
+        input(message: 'Approve Deployment', id: 'deploy')
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deployment'
+      }
+    }
   }
 }
